@@ -23,7 +23,6 @@
             padding: 20px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            text-align: center;
         }
 
         h1 {
@@ -80,7 +79,7 @@
 
 <form action="RegisterServlet" method="post">
     <div class="container">
-        <h1>User Registration</h1>
+        <h1>Registration Form</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
 
@@ -107,8 +106,8 @@
             <p>Already have an account? <a href="#">Sign in</a>.</p>
         </div>
 
-        <h2>Thank You!</h2>
-        <h3>See You Again</h3>
+        <h2>Warm Regards</h2>
+        <h3>Vaibhav Solapure</h3>
     </div>
 </form>
 
