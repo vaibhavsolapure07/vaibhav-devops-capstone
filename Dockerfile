@@ -1,18 +1,12 @@
+# Use a Tomcat base image
+FROM tomcat:9.0-jdk17-slim
 
-# Use OpenJDK base image
-FROM openjdk:17-alpine
+# Copy your .war file into the webapps directory of Tomcat
+COPY target/your-app.war /usr/local/tomcat/webapps/your-app.war
 
-# Install Maven using apk
-RUN apk update && apk add maven
+# Expose the port on which the app will be available
+EXPOSE 8080
 
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy your project files into the container
-COPY . .
-
-# Run Maven to build the project
-RUN mvn clean package
-
-CMD ["java", "-jar", "target/myapp.jar"]
+# Start Tomcat when the container is run
+CMD ["catalina.sh", "run"]
 
