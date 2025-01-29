@@ -106,8 +106,8 @@
             <p>Already have an account? <a href="#">Sign in</a>.</p>
         </div>
 
-        <h2>Warm Regards</h2>
-        <h3>Vaibhav Solapure</h3>
+        <h2>Thank You</h2>
+        <h3>See you again!</h3>
     </div>
 </form>
 
