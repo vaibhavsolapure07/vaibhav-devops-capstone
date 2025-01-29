@@ -1,12 +1,10 @@
-# Use a Tomcat base image
-FROM tomcat:9.0-jdk17-slim
-
-# Copy your .war file into the webapps directory of Tomcat
-COPY target/your-app.war /usr/local/tomcat/webapps/your-app.war
-
-# Expose the port on which the app will be available
+FROM openjdk:17-slim
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.53/bin/apache-tomcat-9.0.53.tar.gz && \
+    tar xzf apache-tomcat-9.0.53.tar.gz && \
+    mv apache-tomcat-9.0.53 /usr/local/tomcat
+WORKDIR /usr/local/tomcat
 EXPOSE 8080
-
-# Start Tomcat when the container is run
-CMD ["catalina.sh", "run"]
+CMD ["bin/catalina.sh", "run"]
 
